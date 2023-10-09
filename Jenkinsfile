@@ -1,23 +1,26 @@
 pipeline{
     agent any
     stages{
-        stage ('compile')
+        stage ('compile'){
         steps{
             script{
                 echo "compile the code"
             }
         }
-        stage ('compile')
+        }
+        stage ('compile'){
         steps{
             script{
                 echo "compile the code"
             }
         }
-        stage ('compile')
+    }
+        stage ('compile'){
         steps{
             script{
                 echo "compile the code"
             }
+        }
         }
     }
 }
