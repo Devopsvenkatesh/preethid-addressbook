@@ -27,6 +27,13 @@ pipeline{
         }
     }
         stage ('packaging'){
+            input{
+                message "select the version"
+                ok "selected"
+                parameters{
+                choice(name: 'NEW_VERSION', choices: ['4', '5', '6'], description: 'Pick')
+                }
+            }
         steps{
             script{
                 echo "packaging the code"
