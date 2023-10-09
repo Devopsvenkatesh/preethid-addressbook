@@ -8,17 +8,17 @@ pipeline{
             }
         }
         }
-        stage ('compile'){
+        stage ('unittest'){
         steps{
             script{
-                echo "compile the code"
+                echo "test the code"
             }
         }
     }
-        stage ('compile'){
+        stage ('packaging'){
         steps{
             script{
-                echo "compile the code"
+                echo "packaging the code"
             }
         }
         }
