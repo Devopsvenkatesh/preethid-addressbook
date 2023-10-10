@@ -1,8 +1,8 @@
 pipeline{
     agent any
     tools{
-        tool name: 'my_java', type: 'jdk'
-        tool name: 'my_maven', type: 'maven'
+        jdk 'my_java'
+        maven 'my_maven'
     }
     parameters{
         string(name: 'DEPLOY_ENV', defaultValue: 'Test', description: 'Env to deploy') 
