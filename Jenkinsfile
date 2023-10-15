@@ -22,7 +22,7 @@ pipeline{
             }
         }
         stage('unittest'){
-            agent any
+            agent { label 'linux_slave' }
             when{
                 expression{
                     params.executetests==true
@@ -35,9 +35,14 @@ pipeline{
                     sh 'mvn test'
                 }
             }
+            post{
+                always{
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
         }
         stage('deploy'){
-            agent { label 'linux_slave' }
+            agent any
             input{
                 message "select the version of package"
                 ok "version selected"
