@@ -40,7 +40,6 @@ pipeline{
                 }
               
             }
-            stage('package'){
             steps{
                 script{
                     echo ("packaging the code")
