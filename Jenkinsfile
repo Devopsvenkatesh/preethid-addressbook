@@ -28,6 +28,19 @@ pipeline{
                 }
             }
         }
+        stage('deploy'){
+            input{
+                message "select the version of package"
+                ok "version selected"
+                submitter "reddy"
+                parameters{
+                            choice(name: 'APPVERSION', choices: ['4', '5', '6'], description: 'select the app version')
+
+
+                }
+              
+            }
+        }
         stage('package'){
             steps{
                 script{
