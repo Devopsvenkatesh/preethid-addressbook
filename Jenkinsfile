@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent none
     tools{
         jdk 'my_java'
         maven 'my_maven'
@@ -11,6 +11,7 @@ pipeline{
     }
     stages{
         stage('compile'){
+            agent any
             steps{
                 script{
                     echo ("compile thr code")
@@ -21,6 +22,7 @@ pipeline{
             }
         }
         stage('unittest'){
+            agent any
             when{
                 expression{
                     params.executetests==true
@@ -35,6 +37,7 @@ pipeline{
             }
         }
         stage('deploy'){
+            agent { label 'linux slave' }
             input{
                 message "select the version of package"
                 ok "version selected"
