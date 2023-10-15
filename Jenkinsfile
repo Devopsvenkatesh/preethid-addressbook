@@ -40,8 +40,7 @@ pipeline{
                 }
               
             }
-        }
-        stage('package'){
+            stage('package'){
             steps{
                 script{
                     echo ("packaging the code")
@@ -49,5 +48,7 @@ pipeline{
                 }
             }
         }
+        }
+        
     }
 }
