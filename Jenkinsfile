@@ -11,6 +11,7 @@ pipeline{
                 script{
                     echo ("compile thr code")
                     echo ("deploying to env ${params.DEPLOY_ENV}")
+                    sh 'mvn compile'
 
                 }
             }
@@ -25,6 +26,7 @@ pipeline{
             steps{
                 script{
                     echo ("run the unittest")
+                    sh 'mvn test'
                 }
             }
         }
@@ -44,6 +46,7 @@ pipeline{
                 script{
                     echo ("packaging the code")
                     echo ("packaging the code ${params.APPVERSION}")
+                    sh 'mvn package'
                 }
             }
         }
