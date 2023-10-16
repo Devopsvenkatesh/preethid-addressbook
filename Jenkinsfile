@@ -45,6 +45,7 @@ pipeline{
             }
         }
         stage('deploy'){
+            agent any
             input{
                 message "select the version of package"
                 ok "version selected"
