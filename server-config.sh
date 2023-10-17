@@ -8,6 +8,7 @@
   git pull origin jenkins1
  else
   git clone https://github.com/Devopsvenkatesh/preethid-addressbook.git
+  git checkout jenkins1
+  cd /home/ec2-user/preethid-addressbook
  fi
- cd /home/ec2-user/preethid-addressbook
  mvn package
