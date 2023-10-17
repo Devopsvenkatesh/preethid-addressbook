@@ -10,7 +10,7 @@ pipeline{
         // choice(name: 'APPVERSION', choices: ['one', 'two', 'three'], description: 'select the app version')
    // }
   environment{
-    DEV_SERVER= 'ec2-user@35.180.225.217'
+    DEV_SERVER= 'ec2-user@13.39.80.48'
   } 
     stages{
         stage('compile'){
